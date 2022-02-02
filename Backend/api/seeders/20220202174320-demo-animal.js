@@ -6,6 +6,7 @@ module.exports = {
       nome: 'Mel',
       especie: 'gato',
       tutor:'Nicolas Martins',
+      PessoaId: 3,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -13,6 +14,7 @@ module.exports = {
       nome: 'Yummi',
       especie: 'gato',
       tutor:'Nicolas Martins',
+      PessoaId: 3,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -20,6 +22,7 @@ module.exports = {
       nome: 'Bob',
       especie: 'gato',
       tutor:'Nicolas Martins',
+      PessoaId: 3,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -27,6 +30,7 @@ module.exports = {
       nome: 'Valentina',
       especie: 'cachorro',
       tutor:'Debora Derica',
+      PessoaId: 4, 
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -34,6 +38,7 @@ module.exports = {
       nome: 'Didi',
       especie: 'passaro',
       tutor: 'Iulia Barros',
+      PessoaId: 4, 
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -41,6 +46,7 @@ module.exports = {
       nome: 'Dadari',
       especie: 'passaro',
       tutor: 'Iulia Barros',
+      PessoaId: 5, 
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -48,6 +54,7 @@ module.exports = {
       nome: 'Amora',
       especie: 'cachorro',
       tutor: 'Margarida Mizu',
+      PessoaId: 7, 
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -55,6 +62,7 @@ module.exports = {
       nome: 'Mancinho',
       especie: 'cachorro',
       tutor: 'Mike tyson',
+      PessoaId: 8, 
       createdAt: new Date(),
       updatedAt: new Date()
     },

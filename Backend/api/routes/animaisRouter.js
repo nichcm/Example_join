@@ -1,11 +1,11 @@
 const { Router } = require('express')
-const  AnimaisContoller = require('../controllers/AnimaisContoller')
+const  AnimaisController = require('../controllers/AnimaisContoller')
 
 
 
 const router = Router()
 
-router.get('/Animais', AnimaisContoller.pegaTodasOsAnimais)
+router.get('/Animais', AnimaisController.pegaTodasOsAnimais)
 // router.post('/niveis', NivelController.criaNivel)
 
 

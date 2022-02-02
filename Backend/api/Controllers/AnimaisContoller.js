@@ -10,6 +10,7 @@ class AnimaisController {
             return res.status(500).json(error.message)
         }
     }
+    
 
     
 

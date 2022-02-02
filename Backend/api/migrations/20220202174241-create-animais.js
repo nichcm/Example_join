@@ -17,6 +17,11 @@ module.exports = {
       tutor: {
         type: Sequelize.STRING
       },
+      PessoaId: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {model: 'Pessoas', key: 'id'}
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
