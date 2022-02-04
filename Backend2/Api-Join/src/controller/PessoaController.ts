@@ -25,12 +25,9 @@ export class PessoaController {
     }
 
     async myAnimals(request: Request, response: Response, next: NextFunction){
-        let a = await this.pessoaRepository.findOne(request.params.id);
-        return await createQueryBuilder('pessoa')
-        .innerJoinAndSelect('pessoa.animais', 'a')
-        .where('pessoa.id = :id', { id: 3 })
-        .getMany();
+        const pessoa = await this.pessoaRepository.createQueryBuilder("pessoa")
+        .innerJoinAndSelect("pessoa.animais", "animal", "animal.PessoaId = :PessoaId", { PessoaId: request.params.id })
+        .getOne();
+        return pessoa.animais;
     }
-
-
 }
