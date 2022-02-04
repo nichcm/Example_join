@@ -1,5 +1,5 @@
 import {Entity, PrimaryGeneratedColumn, Column, ManyToOne} from "typeorm";
-import { Pessoa } from "./pessoa";
+import { Pessoa } from "../entity/pessoa";
 
 @Entity()
 export class Animal {
