@@ -9,7 +9,6 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: linear-gradient( rgba(39,1,120,1) 0%, rgba(10,2,48,1) 100%);
 }
 
 .container {
@@ -77,3 +76,6 @@ body {
   height: 20px;
 }
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
