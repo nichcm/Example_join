@@ -33,7 +33,7 @@
 
     <mat-form-field class="example-full-width">
       <mat-label>Tutor</mat-label>
-      <mat-select required formControlName="pessoaId" name="pessoaId">
+      <mat-select required [(value)]="selecionado" formControlName="pessoaId" name="pessoaId">
         <mat-option *ngFor="let pessoa of pessoas" [value]="pessoa.id">
           {{pessoa.nome}}
         </mat-option>

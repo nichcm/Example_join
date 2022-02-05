@@ -9,7 +9,7 @@ import { AnimaisService } from './animais.service'
 })
 export class ListaAnimaisComponent implements OnInit {
 
-  columnsToDisplay: string[] = ['nome', 'idade', 'especie', 'genero','pessoaId', 'excluir'];
+  columnsToDisplay: string[] = ['nome', 'idade', 'especie', 'genero', 'excluir'];
   animais: Animal[]= [];
 
   constructor( private AnimaisService:  AnimaisService) { }

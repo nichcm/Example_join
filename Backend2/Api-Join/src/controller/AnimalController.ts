@@ -15,7 +15,13 @@ export class AnimalController {
     }
 
     async save(request: Request, response: Response, next: NextFunction) {
-        return this.animalRepository.save(request.body);
+        try {
+            return await this.animalRepository.save(request.body)
+            .catch(erro => {throw erro});
+        } catch (error) {
+            console.log(error)
+        }
+        
     }
 
     async remove(request: Request, response: Response, next: NextFunction) {

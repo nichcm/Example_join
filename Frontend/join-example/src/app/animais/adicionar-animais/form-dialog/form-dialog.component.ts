@@ -11,7 +11,7 @@ import { Pessoa } from './../../../models/pessoas';
 })
 export class FormDialogComponent implements OnInit {
   public animalForm!: FormGroup;
-  tutorSelecionado!: string;
+  selecionado: number = 0;
   pessoas: Pessoa[] = [];
 
   constructor(
@@ -26,7 +26,7 @@ export class FormDialogComponent implements OnInit {
       idade: ['', [Validators.required]],
       especie: ['', [Validators.required]],
       genero: ['', [Validators.required]],
-      pessoaId: ['1', [Validators.required]]
+      pessoaId: ['', [Validators.required]]
     });
     this.rest.pegaPessoas()
     .subscribe((pessoas)=> {
@@ -35,6 +35,8 @@ export class FormDialogComponent implements OnInit {
   }
 
   criarAnimal(){
+    this.animalForm.value.pessoaid = this.selecionado;
+    console.log(this.animalForm.value);
     this.rest.postAnimal(this.animalForm.value).subscribe(result =>{});
     this.dialogRef.close();
     this.animalForm.reset();

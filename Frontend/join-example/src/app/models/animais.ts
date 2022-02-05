@@ -4,5 +4,5 @@ export interface Animal {
   idade: number;
   especie: string;
   genero: string;
-  pessoaId?: number;
+  pessoa?: number;
 }

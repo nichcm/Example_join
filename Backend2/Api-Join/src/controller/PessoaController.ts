@@ -6,6 +6,7 @@ import { Animal } from "../entity/animal";
 export class PessoaController {
 
     private pessoaRepository = getRepository(Pessoa);
+    private animalRepository = getRepository(Animal);
 
     async all(request: Request, response: Response, next: NextFunction) {
         return this.pessoaRepository.find();
@@ -25,9 +26,9 @@ export class PessoaController {
     }
 
     async myAnimals(request: Request, response: Response, next: NextFunction){
-        const pessoa = await this.pessoaRepository.createQueryBuilder("pessoa")
-        .innerJoinAndSelect("pessoa.animais", "animal", "animal.PessoaId = :PessoaId", { PessoaId: request.params.id })
-        .getOne();
-        return pessoa.animais;
+        return this.animalRepository.createQueryBuilder("animal")
+        .where("animal.pessoaId = :pessoaId", {pessoaId: request.params.id})
+        .execute()
+        .catch(err =>{err});
     }
 }

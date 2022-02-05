@@ -23,6 +23,6 @@ export class Animal {
     @Column()
     genero: string;
 
-    @ManyToOne(() => Pessoa, pessoa => pessoa.animais)
-    Pessoa: Pessoa;
+    @Column("int")
+    pessoaId: number;
 }

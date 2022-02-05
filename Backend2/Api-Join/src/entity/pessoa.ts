@@ -22,8 +22,4 @@ export class Pessoa {
 
     @Column()
     genero: string;
-
-
-    @OneToMany(() => Animal, animal => animal.Pessoa)
-    animais: Animal[];
 }

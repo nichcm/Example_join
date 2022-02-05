@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ListaAnimaisService } from './../lista-animais.service';
+import { Pessoa } from './../../models/pessoas';
+import { Animal } from './../../models/animais';
 @Component({
   selector: 'app-lista-meus-animais',
   templateUrl: './lista-meus-animais.component.html',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaMeusAnimaisComponent implements OnInit {
 
-  constructor() { }
+  columnsToDisplay: string[] = ['nome', 'idade', 'especie', 'genero'];
+  animais: Animal[]=[];
+  pessoas: Pessoa[]=[];
+  selecionado: number = 0;
+
+  constructor(private ListaAnimaisService: ListaAnimaisService) { }
 
   ngOnInit(): void {
+    this.ListaAnimaisService
+    .pegaPessoas()
+    .subscribe((pessoas)=> {
+      this.pessoas = pessoas
+    });
+  }
+
+  meusAnimais(): void{
+    this.ListaAnimaisService
+      .getMyAnimals(this.selecionado)
+      .subscribe((animais) =>{
+        this.animais = animais
+      })
   }
 
 }
