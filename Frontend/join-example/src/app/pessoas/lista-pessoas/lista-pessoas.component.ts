@@ -10,7 +10,7 @@ import { Pessoa } from '../../models/pessoas'
 })
 export class ListaPessoasComponent implements OnInit {
 
-  columnsToDisplay: string[] = ['id','nome', 'idade', 'trabalho', 'genero'];
+  columnsToDisplay: string[] = ['id','nome', 'idade', 'trabalho', 'genero', 'deletar'];
   pessoas: Pessoa[]= [];
 
   constructor( private ListaPessoaService:  ListaPessoaService) { }
@@ -21,6 +21,15 @@ export class ListaPessoasComponent implements OnInit {
       .subscribe((pessoas)=> {
         this.pessoas = pessoas
       });
+  }
+
+  deletaPessoa(id:number): void {
+    this.ListaPessoaService
+      .deletePessoa(id)
+      .subscribe(()=>{
+        window.location.reload()
+      })
+
   }
 
 }

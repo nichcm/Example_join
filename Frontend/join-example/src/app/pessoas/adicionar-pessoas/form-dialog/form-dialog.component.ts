@@ -29,6 +29,7 @@ export class FormDialogComponent implements OnInit {
     this.rest.postPessoa(this.pessoaForm.value).subscribe(result =>{});
     this.dialogRef.close();
     this.pessoaForm.reset();
+    window.location.reload()
   }
   cancelar(): void {
     this.dialogRef.close();

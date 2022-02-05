@@ -23,7 +23,7 @@ export class ListaPessoaService {
 
   deletePessoa(id:any)
   {
-      return this.http.get(API + '/pessoas/' + id)
+      return this.http.delete(API + '/pessoas/' + id)
   }
 
 

@@ -27,6 +27,15 @@
     <td mat-cell *matCellDef="let pessoas"> {{pessoas.genero}} </td>
   </ng-container>
 
+  <ng-container matColumnDef="deletar">
+    <th mat-header-cell *matHeaderCellDef> Excluir </th>
+    <td mat-cell *matCellDef="let pessoas">
+      <button mat-icon-button	color="warn" (click)="deletaPessoa(pessoas.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
   <tr mat-header-row *matHeaderRowDef="columnsToDisplay "></tr>
   <tr mat-row *matRowDef="let row; columns: columnsToDisplay ;"></tr>
 
