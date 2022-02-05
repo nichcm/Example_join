@@ -4,5 +4,5 @@ export class Animal {
     idade: number;
     especie: string;
     genero: string;
-    pessoa: any;
+    pessoaId: number;
 }

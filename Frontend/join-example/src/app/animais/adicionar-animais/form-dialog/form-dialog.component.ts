@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { AdicionaService } from "../adiciona.service";
+import { Pessoa } from './../../../models/pessoas';
 
 @Component({
   selector: 'app-form-dialog',
@@ -7,12 +10,35 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./form-dialog.component.css']
 })
 export class FormDialogComponent implements OnInit {
+  public animalForm!: FormGroup;
+  tutorSelecionado!: string;
+  pessoas: Pessoa[] = [];
 
   constructor(
+    private fb: FormBuilder,
+    private rest: AdicionaService,
     public dialogRef: MatDialogRef<FormDialogComponent>
   ) { }
 
   ngOnInit(): void {
+    this.animalForm = this.fb.group({
+      nome: ['', [Validators.required]],
+      idade: ['', [Validators.required]],
+      especie: ['', [Validators.required]],
+      genero: ['', [Validators.required]],
+      pessoaId: ['1', [Validators.required]]
+    });
+    this.rest.pegaPessoas()
+    .subscribe((pessoas)=> {
+      this.pessoas = pessoas
+    });
+  }
+
+  criarAnimal(){
+    this.rest.postAnimal(this.animalForm.value).subscribe(result =>{});
+    this.dialogRef.close();
+    this.animalForm.reset();
+    window.location.reload()
   }
 
   cancelar(): void {

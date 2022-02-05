@@ -21,6 +21,11 @@
     <td mat-cell *matCellDef="let animais"> {{animais.genero}} </td>
   </ng-container>
 
+  <ng-container matColumnDef="pessoaId">
+    <th mat-header-cell *matHeaderCellDef> pessoaId </th>
+    <td mat-cell *matCellDef="let animais"> {{animais.pessoaId}} </td>
+  </ng-container>
+
   <ng-container matColumnDef="excluir">
     <th mat-header-cell *matHeaderCellDef> Excluir </th>
     <td mat-cell *matCellDef="let animais">

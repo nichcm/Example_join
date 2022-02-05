@@ -1,7 +1,48 @@
-<h1 mat-dialog-title>Adidionar Animal</h1>
+<h1 mat-dialog-title>Adicionar Animais de Estimação</h1>
+
 <div mat-dialog-content>
-  <p>nome</p>
+  <form class="example-form" [formGroup]="animalForm">
+    <mat-form-field class="example-full-width">
+      <mat-label>Nome</mat-label>
+      <input required matInput formControlName="nome" name="nome">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Idade</mat-label>
+      <input required matInput formControlName="idade" name="idade">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Espécie</mat-label>
+      <mat-select required formControlName="especie" name="especie">
+        <mat-option value="Feminino">Cachorro</mat-option>
+        <mat-option value="Masculino">Gato</mat-option>
+        <mat-option value="Masculino">Pássaro</mat-option>
+        <mat-option value="Masculino">Réptil </mat-option>
+        <mat-option value="Masculino">Peixe </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Genero</mat-label>
+      <mat-select required formControlName="genero" name="genero">
+        <mat-option value="Feminino">Feminino</mat-option>
+        <mat-option value="Masculino">Masculino</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Tutor</mat-label>
+      <mat-select required formControlName="pessoaId" name="pessoaId">
+        <mat-option *ngFor="let pessoa of pessoas" [value]="pessoa.id">
+          {{pessoa.nome}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </form>
 </div>
 <div mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="criarAnimal()">Adicionar</button>
   <button mat-button (click)="cancelar()">Cancelar</button>
 </div>

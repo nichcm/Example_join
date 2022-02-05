@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
-
-
 import { ListaPessoasComponent } from './lista-pessoas/lista-pessoas.component';
 import { AdicionarPessoasComponent } from './adicionar-pessoas/adicionar-pessoas.component';
 import { PessoasComponent } from './pessoas.component';

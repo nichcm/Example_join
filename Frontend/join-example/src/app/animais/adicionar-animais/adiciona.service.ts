@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Pessoa } from '../../models/pessoas'
+import { Animal } from "../../models/animais";
+import { Pessoa } from "../../models/pessoas";
+
 
 const API = "http://127.0.0.1:3000"
+
 @Injectable({
   providedIn: 'root'
 })
-export class AdicionaServiceService {
+export class AdicionaService {
+
   httpClient: any;
 
   httpOptions = {
@@ -17,8 +21,11 @@ export class AdicionaServiceService {
 
   constructor(private http: HttpClient) { }
 
-  public postPessoa(Pessoa: Pessoa){
-    return this.http.post(API + '/pessoas', Pessoa)
+  public pegaPessoas(){
+    return this.http.get<Pessoa[]>(API + '/pessoas');
   }
 
+  public postAnimal(Animal: Animal){
+    return this.http.post(API + '/animais', Animal)
+  }
 }
