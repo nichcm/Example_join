@@ -3,22 +3,26 @@
   <form class="example-form" [formGroup]="pessoaForm">
     <mat-form-field class="example-full-width">
       <mat-label>Nome completo</mat-label>
-      <input matInput formControlName="nome" name="nome">
+      <input required matInput formControlName="nome" name="nome">
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
       <mat-label>Idade</mat-label>
-      <input matInput formControlName="idade" name="idade">
+      <input required matInput formControlName="idade" name="idade">
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
       <mat-label>Trabalho</mat-label>
-      <input matInput formControlName="trabalho" name="trabalho">
+      <input required matInput formControlName="trabalho" name="trabalho">
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
       <mat-label>Genero</mat-label>
-      <input matInput formControlName="genero" name="genero">
+      <mat-select required formControlName="genero" name="genero">
+        <mat-option value="Feminino">Feminino</mat-option>
+        <mat-option value="Masculino">Masculino</mat-option>
+        <mat-option value="Outro">Outro</mat-option>
+      </mat-select>
     </mat-form-field>
   </form>
 </div>

@@ -27,8 +27,8 @@ export class ListaPessoasComponent implements OnInit {
     this.ListaPessoaService
       .deletePessoa(id)
       .subscribe(()=>{
-        window.location.reload()
       })
+      window.location.reload()
 
   }
 
