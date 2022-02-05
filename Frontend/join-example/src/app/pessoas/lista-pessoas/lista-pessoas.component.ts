@@ -10,7 +10,7 @@ import { Pessoa } from '../../models/pessoas'
 })
 export class ListaPessoasComponent implements OnInit {
 
-  columnsToDisplay: string[] = ['id','nome', 'idade', 'trabalho', 'genero', 'deletar'];
+  columnsToDisplay: string[] = ['nome', 'idade', 'trabalho', 'genero', 'deletar'];
   pessoas: Pessoa[]= [];
 
   constructor( private ListaPessoaService:  ListaPessoaService) { }

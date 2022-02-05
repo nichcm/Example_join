@@ -1,0 +1,31 @@
+main {
+  display: flex;
+
+}
+
+.container {
+  width: 30%;
+  margin: 30px auto;
+  overflow: auto;
+  min-height: 300px;
+  border: 1px solid rgb(0, 0, 0);
+  padding: 30px;
+  border-radius: 16px;
+  background-color: rgb(0.90,0.97,1.00, 0.3);
+  -webkit-box-shadow: 12px 11px 15px 0px #000000;
+  box-shadow: 12px 11px 15px 0px #000000;
+}
+
+
+@media (max-width: 1024px) {
+  main{
+    flex-direction: column;
+  }
+  .container{
+    width: 100%;
+    border-radius: 0px;
+  }
+
+
+
+}

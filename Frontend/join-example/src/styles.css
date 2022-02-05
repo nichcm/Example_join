@@ -5,21 +5,15 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
 }
 
 body {
   font-family: "Poppins", sans-serif;
+  height: 100vh;
 }
 
-.container {
-  max-width: 500px;
-  margin: 30px auto;
-  overflow: auto;
-  min-height: 300px;
-  border: 1px solid steelblue;
-  padding: 30px;
-  border-radius: 16px;
-}
+
 .btn {
   display: inline-block;
   background: #000;
