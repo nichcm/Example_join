@@ -21,8 +21,8 @@ export class AnimaisService {
         return this.http.get<Animal[]>(API + '/animais/' + id);
     }
 
-  deleteAnimal(id:any)
+    delete(id:any)
   {
-      return this.http.get(API + '/animais/' + id)
+      return this.http.delete(API + '/animais/' + id)
   }
 }

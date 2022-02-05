@@ -11,6 +11,7 @@ import { ListaAnimaisComponent } from './lista-animais/lista-animais.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon';
 
 
 import { AnimaisService } from './lista-animais/animais.service';
@@ -29,7 +30,8 @@ import { FormDialogComponent } from './adicionar-animais/form-dialog/form-dialog
     HttpClientModule,
     MatTableModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatIconModule
   ],
   exports: [
     AnimaisComponent

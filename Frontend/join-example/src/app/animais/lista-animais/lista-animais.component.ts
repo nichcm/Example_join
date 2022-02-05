@@ -9,7 +9,7 @@ import { AnimaisService } from './animais.service'
 })
 export class ListaAnimaisComponent implements OnInit {
 
-  columnsToDisplay: string[] = ['id','nome', 'idade', 'especie', 'genero'];
+  columnsToDisplay: string[] = ['nome', 'idade', 'especie', 'genero', 'excluir'];
   animais: Animal[]= [];
 
   constructor( private AnimaisService:  AnimaisService) { }
@@ -20,6 +20,15 @@ export class ListaAnimaisComponent implements OnInit {
       .subscribe((animais)=> {
         this.animais = animais
       });
+    }
+
+    deletaAnimal(id:number): void {
+      this.AnimaisService
+        .delete(id)
+        .subscribe(()=>{
+        })
+        window.location.reload()
+
     }
 
 }
