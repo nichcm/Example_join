@@ -35,8 +35,8 @@ export class FormDialogComponent implements OnInit {
   }
 
   criarAnimal(){
-    this.animalForm.value.pessoaid = this.selecionado;
-    console.log(this.animalForm.value);
+    //this.animalForm.value.pessoaId = this.selecionado;
+    //console.log(this.animalForm.value);
     this.rest.postAnimal(this.animalForm.value).subscribe(result =>{});
     this.dialogRef.close();
     this.animalForm.reset();

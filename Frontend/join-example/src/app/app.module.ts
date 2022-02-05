@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import {MatButtonModule} from '@angular/material/button';
 
 
 import { PessoasModule } from './pessoas/pessoas.module';
@@ -29,7 +30,8 @@ import { MeusAnimaisModule } from './meus-animais/meus-animais.module';
     AnimaisModule,
     MeusAnimaisModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatButtonModule
 
   ],
   providers: [],

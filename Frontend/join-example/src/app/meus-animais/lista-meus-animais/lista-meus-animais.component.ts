@@ -12,7 +12,7 @@ export class ListaMeusAnimaisComponent implements OnInit {
   columnsToDisplay: string[] = ['nome', 'idade', 'especie', 'genero'];
   animais: Animal[]=[];
   pessoas: Pessoa[]=[];
-  selecionado: number = 0;
+  selecionado: number = 2;
 
   constructor(private ListaAnimaisService: ListaAnimaisService) { }
 
@@ -22,7 +22,14 @@ export class ListaMeusAnimaisComponent implements OnInit {
     .subscribe((pessoas)=> {
       this.pessoas = pessoas
     });
+    this.ListaAnimaisService.getMyAnimals(this.selecionado)
+      .subscribe((animais) =>{
+        this.animais = animais
+        console.log(animais)
+      })
   }
+
+
 
   meusAnimais(): void{
     this.ListaAnimaisService
@@ -30,6 +37,7 @@ export class ListaMeusAnimaisComponent implements OnInit {
       .subscribe((animais) =>{
         this.animais = animais
       })
+
   }
 
 }
