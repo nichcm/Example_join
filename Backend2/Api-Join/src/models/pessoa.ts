@@ -1,4 +1,4 @@
-export class Photo {
+export class Pessoa {
     id: number;
     nome: string;
     idade: number;

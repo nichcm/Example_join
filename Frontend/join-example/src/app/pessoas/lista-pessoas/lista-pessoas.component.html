@@ -1,1 +1,33 @@
-<p>lista-pessoas works!</p>
+
+<table mat-table [dataSource]="pessoas" class="mat-elevation-z8">
+
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> id </th>
+    <td mat-cell *matCellDef="let pessoas"> {{pessoas.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="nome">
+    <th mat-header-cell *matHeaderCellDef> Nome </th>
+    <td mat-cell *matCellDef="let pessoas"> {{pessoas.nome}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="idade">
+    <th mat-header-cell *matHeaderCellDef> Idade </th>
+    <td mat-cell *matCellDef="let pessoas"> {{pessoas.idade}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="trabalho">
+    <th mat-header-cell *matHeaderCellDef> Trabalho </th>
+    <td mat-cell *matCellDef="let pessoas"> {{pessoas.trabalho}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="genero">
+    <th mat-header-cell *matHeaderCellDef> Genero </th>
+    <td mat-cell *matCellDef="let pessoas"> {{pessoas.genero}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay "></tr>
+  <tr mat-row *matRowDef="let row; columns: columnsToDisplay ;"></tr>
+
+</table>

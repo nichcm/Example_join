@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ListaPessoaService} from './lista-pessoa.service'
+import { Pessoa } from '../../models/pessoas'
+
 
 @Component({
   selector: 'app-lista-pessoas',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaPessoasComponent implements OnInit {
 
-  constructor() { }
+  columnsToDisplay: string[] = ['id','nome', 'idade', 'trabalho', 'genero'];
+  pessoas: Pessoa[]= [];
+
+  constructor( private ListaPessoaService:  ListaPessoaService) { }
 
   ngOnInit(): void {
+    this.ListaPessoaService
+      .getAllpessoas()
+      .subscribe((pessoas)=> {
+        this.pessoas = pessoas
+      });
   }
 
 }
